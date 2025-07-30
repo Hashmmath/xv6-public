@@ -183,8 +183,8 @@ UPROGS=\
 	_zombie\
 	_tail\
 
-fs.img: mkfs README tail.c $(UPROGS)
-	./mkfs fs.img README tail.c $(UPROGS)
+fs.img: mkfs README tail.c hello.txt $(UPROGS)
+	./mkfs fs.img README tail.c hello.txt $(UPROGS)
 
 -include *.d
 

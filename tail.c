@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
             NUM = parse_num(argv[1]);
             if (NUM < 0)
             {
-                printf(2, "tail_hs5544: invalid number\n");
+                printf(2, "tail: invalid number\n");
                 exit();
             }
             fd = 0;
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
             NUM = 10;
             if ((fd = open(argv[1], 0)) < 0)
             {
-                printf(2, "tail_hs5544: cannot open %s\n", argv[1]);
+                printf(2, "tail: cannot open %s\n", argv[1]);
                 exit();
             }
         }
@@ -65,24 +65,24 @@ int main(int argc, char *argv[])
             NUM = parse_num(argv[1]);
             if (NUM < 0)
             {
-                printf(2, "tail_hs5544: invalid number\n");
+                printf(2, "tail: invalid number\n");
                 exit();
             }
             if ((fd = open(argv[2], 0)) < 0)
             {
-                printf(2, "tail_hs5544: cannot open %s\n", argv[2]);
+                printf(2, "tail: cannot open %s\n", argv[2]);
                 exit();
             }
         }
         else
         {
-            printf(2, "usage: tail_hs5544 [-NUM] [file]\n");
+            printf(2, "usage: tail [-NUM] [file]\n");
             exit();
         }
     }
     else
     {
-        printf(2, "usage: tail_hs5544 [-NUM] [file]\n");
+        printf(2, "usage: tail [-NUM] [file]\n");
         exit();
     }
 
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     char **lines = malloc(NUM * sizeof(char *));
     if (lines == 0)
     {
-        printf(2, "tail_hs5544: malloc failed\n");
+        printf(2, "tail: malloc failed\n");
         exit();
     }
     for (i = 0; i < NUM; i++)
@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
             char *line = malloc(pos + 1);
             if (line == 0)
             {
-                printf(2, "tail_hs5544: malloc failed\n");
+                printf(2, "tail: malloc failed\n");
                 exit();
             }
             memmove(line, buf, pos + 1);
@@ -137,7 +137,7 @@ int main(int argc, char *argv[])
                 char *line = malloc(pos + 1);
                 if (line == 0)
                 {
-                    printf(2, "tail_hs5544: malloc failed\n");
+                    printf(2, "tail: malloc failed\n");
                     exit();
                 }
                 memmove(line, buf, pos + 1);
@@ -161,7 +161,7 @@ int main(int argc, char *argv[])
         char *line = malloc(pos + 1);
         if (line == 0)
         {
-            printf(2, "tail_hs5544: malloc failed\n");
+            printf(2, "tail: malloc failed\n");
             exit();
         }
         memmove(line, buf, pos + 1);
